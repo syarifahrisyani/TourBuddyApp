@@ -1,0 +1,48 @@
+<resources>
+    <string name="app_name">Tour Buddy App</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_favorite">Favorite</string>
+    <string name="title_profile">Profile</string>
+
+    // Onboard
+    <string name="signup">SignUp</string>
+    <string name="login">Login</string>
+    <string name="title_onboard_page">WELCOME TOUR BUDDY</string>
+    <string name="message_onboard_page">Tourist Destination Recommendation App and presents cultural and historical attractions, with this app, your vacation becomes more efficient.</string>
+
+    // regis and login page
+    <string name="title_regis_page">Create Account</string>
+    <string name="content_regis_page">Please complete the data first !</string>
+    <string name="name">Fullname</string>
+    <string name="email">Email Address</string>
+    <string name="password">Password</string>
+    <string name="content_login_page">Welcome Back</string>
+    <string name="title_login_page">Sign to continue</string>
+
+    // home page
+    <string name="searchbar_hint">Search Destination</string>
+    <string name="title_destination_page">Popular Destination</string>
+    <string name="title_activity_maps">MapsActivity</string>
+
+    // item destination
+    <string name="title_item">Title Destination</string>
+    <string name="location">Location</string>
+    <string name="title_location">Title Location</string>
+
+    // profile page
+    <string name="name_profile">Lola</string>
+    <string name="name_email">Lola123@gmail.com</string>
+    <string name="logout">Logout</string>
+
+
+    // detail page
+    <string name="title_detail_destination">Title Destination</string>
+    <string name="description_destination">Description Destination</string>
+    <string name="description_event">Description Event</string>
+    <string name="favorite">Favorite</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+</resources>
