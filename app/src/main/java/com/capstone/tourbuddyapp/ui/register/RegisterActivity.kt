@@ -1,56 +1,71 @@
 package com.capstone.tourbuddyapp.ui.register
 
-import android.os.Build
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.view.WindowInsets
-import android.view.WindowManager
 import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
-import com.capstone.tourbuddyapp.R
+import androidx.lifecycle.ViewModelProvider
 import com.capstone.tourbuddyapp.databinding.ActivityRegisterBinding
+import com.capstone.tourbuddyapp.ui.custom.EditTextEmail
 import com.capstone.tourbuddyapp.ui.custom.EditTextName
+import com.capstone.tourbuddyapp.ui.custom.EditTextPassword
+import com.capstone.tourbuddyapp.ui.onboarding.OnBoardActivity
 
 class RegisterActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityRegisterBinding
+    private lateinit var registerViewModel: RegisterViewModel
+    private lateinit var editTextName: EditTextName
+    private lateinit var editTextEmail: EditTextEmail
+    private lateinit var editTextPassword: EditTextPassword
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        setupView()
-        setupAction()
-    }
+        // inisialisasi viewmodel
+        registerViewModel = ViewModelProvider(this).get(RegisterViewModel::class.java)
 
-    private fun setupView() {
-        @Suppress("DEPRECATION")
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-            window.insetsController?.hide(WindowInsets.Type.statusBars())
-        } else {
-            window.setFlags(
-                WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN
-            )
-        }
-        supportActionBar?.hide()
+        setupAction()
+
+        editTextName = binding.edRegisterUsername
+        editTextEmail = binding.edRegisterEmail
+        editTextPassword = binding.edRegisterPassword
     }
 
     private fun setupAction() {
         binding.btnRegis.setOnClickListener {
+            val username = binding.edRegisterUsername.text.toString()
             val email = binding.edRegisterEmail.text.toString()
-            AlertDialog.Builder(this).apply {
-                setTitle("Success")
-                setMessage("Your account $email is created.")
-                setPositiveButton("Next") { _, _ ->
-                    finish()
+            val password = binding.edRegisterPassword.text.toString()
+
+            showLoading(true)
+
+            // call function register from viewmodel
+            registerViewModel.register(username, email, password)
+
+            registerViewModel.registerResult.observe(this, { isSuccess ->
+                showLoading(false)
+                if (isSuccess) {
+                    showToast("Registration Successful.")
+                    navigateToOnBoarding()
+                } else {
+                    showToast("Registration failed.")
                 }
-                create()
-                show()
-            }
+            })
+
+            registerViewModel.errorMessage.observe(this, {errorMessage ->
+                showToast("Error: $errorMessage")
+            })
         }
+    }
+
+    private fun navigateToOnBoarding() {
+        val intent = Intent(this, OnBoardActivity::class.java)
+        startActivity(intent)
+        finish()
     }
 
     private fun showLoading(isLoading: Boolean) {

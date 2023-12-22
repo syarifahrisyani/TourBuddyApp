@@ -11,9 +11,6 @@ import com.capstone.tourbuddyapp.R
 import com.capstone.tourbuddyapp.databinding.ActivityHomeBinding
 
 class HomeActivity : AppCompatActivity() {
-//    private val homeViewModel by viewModels<HomeViewModel> {
-//        ViewModelFactory.getInstance(this)
-//    }
     private lateinit var binding: ActivityHomeBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,43 +20,15 @@ class HomeActivity : AppCompatActivity() {
 
         setSupportActionBar(findViewById(R.id.toolbar))
 
-//        supportActionBar?.title = "Tour Buddy App"
-//        supportActionBar?.elevation = 0f
-
         val navView: BottomNavigationView = binding.navViewHome
 
         val navController = findNavController(R.id.navHost_fragment_activityHome)
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
+
         val appBarConfiguration = AppBarConfiguration.Builder(
-            setOf(
-                R.id.navigation_home, R.id.navigation_favorite, R.id.navigation_profile
-            )
+            R.id.navigation_home, R.id.navigation_favorite, R.id.navigation_profile
         ).build()
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
-//        homeViewModel.getSession().observe(this) { user ->
-//            if (!user.isLogin) {
-//                startActivity(Intent(this, OnBoardActivity::class.java))
-//                finish()
-//            }
-//        }
-//
-//        setupView()
-        //setupAction()
     }
-
-//    private fun setupView() {
-//        @Suppress("DEPRECATION")
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-//            window.insetsController?.hide(WindowInsets.Type.statusBars())
-//        } else {
-//            window.setFlags(
-//                WindowManager.LayoutParams.FLAG_FULLSCREEN,
-//                WindowManager.LayoutParams.FLAG_FULLSCREEN
-//            )
-//        }
-//        supportActionBar?.hide()
-//    }
 }

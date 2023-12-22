@@ -29,7 +29,7 @@ class EditTextName : AppCompatEditText {
 
             override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
                 if (s.toString().isEmpty()) {
-                    setError( "Name must be filled in!", null)
+                    setError( "username must be filled in!", null)
                 } else {
                     error = null
                 }

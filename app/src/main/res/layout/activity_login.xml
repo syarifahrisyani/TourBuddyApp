@@ -49,7 +49,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_titleLogin"/>
 
-
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/til_emailEditLogin"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -66,7 +65,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_contentLogin"
         app:startIconDrawable="@drawable/ic_email">
 
-        <com.capstone.tourbuddyapp.ui.custom.EditTextName
+        <com.capstone.tourbuddyapp.ui.custom.EditTextEmail
             android:id="@+id/ed_login_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -91,7 +90,7 @@
         app:layout_constraintTop_toBottomOf="@+id/til_emailEditLogin"
         app:startIconDrawable="@drawable/ic_lock">
 
-        <com.capstone.tourbuddyapp.ui.custom.EditTextName
+        <com.capstone.tourbuddyapp.ui.custom.EditTextPassword
             android:id="@+id/ed_login_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

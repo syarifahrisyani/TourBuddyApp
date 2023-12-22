@@ -1,7 +1,10 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
-    id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin")
+    id("com.google.gms.google-services")
+    id("kotlin-parcelize")
+//    id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin")
+//    id("com.google.devtools.ksp")
 }
 
 android {
@@ -73,6 +76,16 @@ dependencies {
     implementation("com.github.bumptech.glide:glide:4.11.0")
 
     implementation ("de.hdodenhof:circleimageview:3.1.0")
+
+    // firebase
+    implementation(platform("com.google.firebase:firebase-bom:32.7.0"))
+    implementation("com.google.firebase:firebase-analytics")
+    implementation("com.google.firebase:firebase-auth-ktx:22.3.0")
+
+//    // room
+//    implementation("androidx.room:room-runtime:2.5.2")
+//    implementation("androidx.room:room-ktx:2.5.2")
+//    ksp("androidx.room:room-compiler:2.5.2")
 
 
 }

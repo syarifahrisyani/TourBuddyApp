@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowInsets
 import android.view.WindowManager
-import com.capstone.tourbuddyapp.R
 import com.capstone.tourbuddyapp.databinding.ActivityOnBoardBinding
 import com.capstone.tourbuddyapp.ui.login.LoginActivity
 import com.capstone.tourbuddyapp.ui.register.RegisterActivity

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "438275514848",
+    "project_id": "regis-login-firebase",
+    "storage_bucket": "regis-login-firebase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:438275514848:android:d3b06fc732635697a88b85",
+        "android_client_info": {
+          "package_name": "com.capstone.tourbuddyapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCAJFBjGymY0hbM0wJH5eFCxDkFZMPgYsU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
