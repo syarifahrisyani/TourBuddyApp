@@ -1,4 +1,4 @@
-##MOBILE DEVELOPMENT
+## MOBILE DEVELOPMENT
 
 *Berikut Progress dari Mobile Development*
 - UI Design menggunakan Figma
