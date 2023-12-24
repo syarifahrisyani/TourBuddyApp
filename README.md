@@ -7,4 +7,7 @@
 
 
 ![Slide 16_9 - 2](https://storage.googleapis.com/tourbuddy/TourBuddyUi.png)
+
+## App Demo
+![Slide 16_9 - 2](https://storage.googleapis.com/tourbuddy/TourBuddy%20Demo.gif)
  
